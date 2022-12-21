@@ -344,3 +344,7 @@ shred -fuvz -n 5 "fichier"
 |-v|Affiche la progression.|
 |-z|Ajout de zéros après la suppression du fichier.|
 |-n|Nombres de phases d'écrasement du fichier.|
+ 
+## Créer un fichier chiffré
+1. `vim -x fichier.txt`
+2. Indiquer une clé de chiffrement puis valider.
