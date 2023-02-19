@@ -348,3 +348,10 @@ shred -fuvz -n 5 "fichier"
 ## Créer un fichier chiffré
 1. `vim -x fichier.txt`
 2. Indiquer une clé de chiffrement puis valider.
+
+ ## Afficher les identifiants wifi
+ ```bash
+ nmcli device wifi list
+ 
+ nmcli device wifi show-password
+ ```
