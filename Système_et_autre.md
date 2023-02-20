@@ -857,3 +857,12 @@ ps -eo user,pid,comm,%mem,%cpu --sort=-%cpu,-%mem | head -20
 ```bash
 sudo dmidecode -t bios
 ```
+
+## Désactiver le compt root
+```bash
+passwd -l root
+
+Ou
+
+passwd --lock root
+```
