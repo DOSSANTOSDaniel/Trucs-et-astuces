@@ -850,5 +850,5 @@ man hier
 
 ## Afficher l'utilisation CPU et mémoire des 20 processus consommant le plus de mémoire et de ressources CPU 
 ```Bash
-ps -eo pid,comm,%mem,%cpu --sort=-%cpu,-%mem | head -20
+ps -eo user,pid,comm,%mem,%cpu --sort=-%cpu,-%mem | head -20
 ```
