@@ -852,3 +852,8 @@ man hier
 ```Bash
 ps -eo user,pid,comm,%mem,%cpu --sort=-%cpu,-%mem | head -20
 ```
+
+## Afficher des informations par rapport au BIOS sur le système
+```bash
+sudo dmidecode -t bios
+```
