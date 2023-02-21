@@ -355,3 +355,15 @@ shred -fuvz -n 5 "fichier"
  
  nmcli device wifi show-password
  ```
+
+## Désactiver le compte root
+```bash
+passwd -l root
+Ou
+passwd --lock root
+```
+ 
+## Génération de mots de passe aléatoires
+```bash
+tr -dc [:upper:][:lower:][:digit:][:punct:] < /dev/urandom | head -c12
+```
