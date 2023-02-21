@@ -866,3 +866,8 @@ Ou
 
 passwd --lock root
 ```
+
+## Génération de mots de passe aléatoires
+```bash
+cat /dev/urandom | tr -dc [:upper:][:lower:][:digit:][:punct:] | head -c12
+```
