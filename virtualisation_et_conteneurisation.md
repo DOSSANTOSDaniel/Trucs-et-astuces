@@ -217,13 +217,42 @@ usermod -a -G vboxsf <nom_utilisateur>
  sudo mount -t vboxsf PartageVBox /media/sf_PartageVBox
 ```
 
-## Préparation des machines virtuelles sous Debian sur KVM
+## Préparation des machines virtuelles sur Qemu/KVM
+### Debian
 ```Bash
 sudo apt update && sudo apt full-upgrade -y
-
 sudo apt install sudo spice-vdagent spice-webdavd qemu-guest-agent git vim -y
-
 usermod -a -G sudo daniel
+reboot
+```
+
+### Ubuntu
+```Bash
+sudo apt update && sudo apt full-upgrade -y
+sudo apt install sudo spice-vdagent spice-webdavd qemu-guest-agent git vim -y
+```
+
+### Fedora
+```Bash
+sudo dnf upgrade --refresh --assumeyes
+sudo dnf install spice-vdagent spice-webdavd qemu-guest-agent git vim --assumeyes
+```
+
+### ArchLinux
+```Bash
+sudo pacman -Suyy
+sudo pacman -S spice-vdagent qemu-guest-agent git vim
+```
+
+### FreeBSD
+```Bash
+# freebsd-update fetch
+# freebsd-update install
+# pkg update
+# pkg install sudo qemu-guest-agent git vim
+# visudo
+
+%wheel ALL=(ALL) ALL
 
 reboot
 ```
