@@ -252,6 +252,7 @@ sudo pacman -S spice-vdagent qemu-guest-agent git vim
 # pkg install sudo qemu-guest-agent git vim
 # visudo
 
+daniel ALL=(ALL) ALL
 %wheel ALL=(ALL) ALL
 
 reboot
