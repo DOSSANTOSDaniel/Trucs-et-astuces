@@ -225,6 +225,11 @@ sudo apt install sudo spice-vdagent spice-webdavd qemu-guest-agent git vim -y
 usermod -a -G sudo daniel
 reboot
 ```
+#### Proxmox CT
+Configuration de l'heure
+```Bash
+sudo ln -fs /usr/share/zoneinfo/Europe/Paris /etc/localtime
+```
 
 ### Ubuntu
 ```Bash
