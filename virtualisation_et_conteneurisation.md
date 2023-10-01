@@ -251,14 +251,18 @@ sudo pacman -S spice-vdagent qemu-guest-agent git vim
 
 ### FreeBSD
 ```Bash
-# freebsd-update fetch
-# freebsd-update install
-# pkg update
-# pkg install sudo qemu-guest-agent git vim
-# visudo
+su -
+freebsd-update fetch
+freebsd-update install
+pkg update
+pkg upgrade
 
-daniel ALL=(ALL) ALL
-%wheel ALL=(ALL) ALL
+pkg install sudo qemu-guest-agent git vim
 
+visudo
+#Décomenter cette ligne
+%wheel ALL=(ALL:ALL) ALL
+
+pw groupmod wheel -m MY_USER
 reboot
 ```
