@@ -265,4 +265,7 @@ visudo
 
 pw groupmod wheel -m MY_USER
 reboot
+
+sudo service qemu-guest-agent enable
+sudo service qemu-guest-agent start
 ```
