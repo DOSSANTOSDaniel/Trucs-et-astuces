@@ -217,39 +217,56 @@ usermod -a -G vboxsf <nom_utilisateur>
  sudo mount -t vboxsf PartageVBox /media/sf_PartageVBox
 ```
 
-## Préparation des machines virtuelles sur Qemu/KVM
-### Debian
+## Préparation des machines virtuelles sur Qemu/KVM/Proxmox
+### Configuration des conteneurs
+#### Configuration de l'heure
+```Bash
+sudo ln -fs /usr/share/zoneinfo/Europe/Paris /etc/localtime
+```
+### Configuration des VM's
+#### Debian
 ```Bash
 sudo apt update && sudo apt full-upgrade -y
 sudo apt install sudo spice-vdagent spice-webdavd qemu-guest-agent git vim -y
 usermod -a -G sudo daniel
 reboot
 ```
-#### Proxmox CT
-Configuration de l'heure
-```Bash
-sudo ln -fs /usr/share/zoneinfo/Europe/Paris /etc/localtime
-```
 
-### Ubuntu
+#### Ubuntu
 ```Bash
 sudo apt update && sudo apt full-upgrade -y
 sudo apt install sudo spice-vdagent spice-webdavd qemu-guest-agent git vim -y
 ```
 
-### Fedora
+#### Fedora
 ```Bash
 sudo dnf upgrade --refresh --assumeyes
 sudo dnf install spice-vdagent spice-webdavd qemu-guest-agent git vim --assumeyes
 ```
 
-### ArchLinux
+#### ArchLinux
 ```Bash
 sudo pacman -Suyy
 sudo pacman -S spice-vdagent qemu-guest-agent git vim
 ```
 
-### FreeBSD
+#### OpenSUSE
+```
+Activer QEMU guest agent dans la configuration de la VM
+
+sudo zypper refresh
+sudo zypper update
+
+sudo zypper install qemu-guest-agent
+sudo systemctl enable qemu-guest-agent
+
+#sudo zypper install spice-vdagent
+#systemctl --user enable spice-vdagent.service
+
+sudo reboot
+```
+
+#### FreeBSD
 ```Bash
 su -
 freebsd-update fetch
