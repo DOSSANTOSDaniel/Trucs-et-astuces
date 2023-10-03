@@ -286,3 +286,24 @@ reboot
 sudo service qemu-guest-agent enable
 sudo service qemu-guest-agent start
 ```
+
+#### Windows
+```powershell
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
